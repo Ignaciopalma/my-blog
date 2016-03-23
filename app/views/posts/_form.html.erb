@@ -1,0 +1,20 @@
+<%= simple_form_for(@post) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<%= f.input :creador, label: 'Tu nombre' %>
+  	<%= f.input :ruta, label: 'Ruta' %>
+  	<%= f.input :año, label: 'En que año fue tu experiencia?' %>
+  	<%= f.input :historia, label: 'Historia de tu viaje / Consejos' %>
+  	<%= f.input :spot, label: 'Algun buen dato para compartir? (lugar de camping/comida/etc..)' %>
+  	<%= f.input :peligro, label: 'Algun peligro que comentar' %>
+
+
+  	
+  	<%= f.input :image, as: :file, label: 'Sube tus imagenes' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <!-- Navigation -->
+    <%= render 'layouts/nav' %>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('assets/pumalin.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>A La Vuelta De La Rueda</h1>
+                        <hr class="small">
+                        <span class="subheading">Carretera Austral - 2016</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+                    <a href="pumalin">
+                        <h2 class="post-title">
+                            Pumalin, naturaleza indomita
+                        </h2>
+                        <h3 class="post-subtitle">
+                            Los ultimos bastiones de lo que fue la tierra
+                        </h3>
+                    </a>
+                    <p class="post-meta">Por <a href="memorias_path">Ignacio Palma</a></p>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="felicidad">
+                        <h2 class="post-title">
+                            Cuánto Necesitamos para ser Felices?
+                        </h2>
+                    </a>
+                    <p class="post-meta">Por <a href="#">Ignacio Palma</a></p>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            Tecnologia a favor del potencial individual.
+                        </h2>
+                        <h3 class="post-subtitle">
+                            La sobrevivencia al siguiente nivel.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Por <a href="#">Ignacio Palma</a></p>
+                </div>
+                <hr>
+
+                <% @all_posts.each do |p| %>
+                <div class="post-preview">
+                    <%= link_to post_path(p) do %>
+                        <h2 class="post-title">
+                            <%= p.ruta %>
+                        </h2>
+                        <h3 class="post-subtitle">
+                            <%= p.historia %>
+                        </h3>
+                    <% end %>
+                    <p class="post-meta">Por <a href="#"><%= p.creador %></a></p>
+                </div>
+                <hr>
+                <% end %>
+                
+
+                <%= render "posts/form" %>
+
+
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
