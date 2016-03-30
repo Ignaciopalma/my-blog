@@ -13,6 +13,7 @@ gem 'simple_form'
 gem "paperclip", "~> 4.3"
 
 
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

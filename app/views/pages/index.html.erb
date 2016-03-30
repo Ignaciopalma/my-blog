@@ -26,39 +26,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="pumalin">
-                        <h2 class="post-title">
-                            Pumalin, naturaleza indomita
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Los ultimos bastiones de lo que fue la tierra
-                        </h3>
-                    </a>
-                    <p class="post-meta">Por <a href="memorias_path">Ignacio Palma</a></p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="felicidad">
-                        <h2 class="post-title">
-                            Cuánto Necesitamos para ser Felices?
-                        </h2>
-                    </a>
-                    <p class="post-meta">Por <a href="#">Ignacio Palma</a></p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Tecnologia a favor del potencial individual.
-                        </h2>
-                        <h3 class="post-subtitle">
-                            La sobrevivencia al siguiente nivel.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Por <a href="#">Ignacio Palma</a></p>
-                </div>
-                <hr>
 
                 <% @all_posts.each do |p| %>
                 <div class="post-preview">
@@ -74,7 +41,9 @@
                 </div>
                 <hr>
                 <% end %>
-          
+
+
+
 
                 <%= render "posts/form" %>
 

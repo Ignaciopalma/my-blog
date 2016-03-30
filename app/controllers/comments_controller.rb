@@ -24,13 +24,10 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.create(comment_params)
 
-      if @comment.save
-        redirect_to felicidad_path, notice: 'Comment was successfully created.' 
-      else
-        render :new 
-      end
+    redirect_to post_path(@post)
    
   end
 
@@ -38,7 +35,7 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1.json
   def update
       if @comment.update(comment_params)
-        redirect_to felicidad_path, notice: 'Comment was successfully updated.' 
+        redirect_to post_path, notice: 'Comment was successfully updated.' 
       else
         render :edit 
       end
@@ -59,7 +56,7 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:name, :description)
+      params.require(:comment).permit(:name, :description, :post_id)
     end
 end
 
