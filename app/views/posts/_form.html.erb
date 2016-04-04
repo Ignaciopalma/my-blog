@@ -1,20 +1,50 @@
-<%= simple_form_for(@post) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-  	<%= f.input :creador, label: 'Tu nombre' %>
-  	<%= f.input :ruta, label: 'Ruta' %>
-  	<%= f.input :año, label: 'En que año fue tu experiencia?' %>
-  	<%= f.input :historia, label: 'Historia de tu viaje / Consejos' %>
-  	<%= f.input :spot, label: 'Algun buen dato para compartir? (lugar de camping/comida/etc..)' %>
-  	<%= f.input :peligro, label: 'Algun peligro que comentar' %>
-
-
-  	
-  	<%= f.input :image, as: :file, label: 'Sube tus imagenes' %>
+<%= form_for @post, :html => { :multipart => true } do |f| %>
+  <div class="form-group">
+    <%= f.label :Tu_Nombre %>
+    <%= f.text_field :creador, class: "form-control" %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <%= f.label :ruta %> (Ej: Puerto Montt / Caleta Las Arenas)
+    <%= f.text_area :ruta, class: "form-control" %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :año %> (Cuando fue tu experiencia?)
+    <%= f.text_field :año, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :historia %> (Cuentanos la historia de tu viaje!)
+    <%= f.text_area :historia, class: "form-control", size: "50x15" %>
+  </div>
+
+    <div class="form-group">
+    <%= f.label :Datos %> (campings, comidas, lugares de entretencion)
+    <%= f.text_field :spot, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :peligro %> (lugares sin camino, sin acceso a agua o alimentos, robos, etc)
+    <%= f.text_area :peligro, class: "form-control" %>
+    </div>
+
+<h3>Imagen Principal</h3>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+
+  </div>
+
+<!--     <h3>Imagenes de galeria</h3>
+      <%= fields_for :assets do |assets_fields| %>
+        <p>
+          <%= assets_fields.file_field :image %>
+        </p>
+      <% end %> -->
+
+  <div>
+    <%= f.submit class: "btn btn-success" %>
+  </div>
+
 <% end %>

@@ -16,17 +16,22 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @post.assets.new
   end
 
   # GET /posts/1/edit
   def edit
+    @post = Post.find(params[:id])
+    @post.assets.build 
+
+
   end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    
       if @post.save
         redirect_to @post, notice: 'Post was successfully created.' 
       else
@@ -63,6 +68,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:ruta, :historia, :image, :creador, :spot, :peligro, :año)
+      params.require(:post).permit(:ruta, :historia, :image, :creador, :spot, :peligro, :año, assets_attributes: [:post_id, :image_file_name, :created_at, :updated_at, :image_content_type, :image_file_size, :image_updated_at])
     end
 end

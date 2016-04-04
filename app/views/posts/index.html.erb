@@ -1,25 +1,82 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>Listing Posts</h1>
+<body>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <!-- Navigation -->
+    <%= render 'layouts/nav' %>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('/assets/pumalin.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>A La Vuelta De La Rueda</h1>
+                        <hr class="small">
+                        <span class="subheading">Cicloturismo en Chile</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<br>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<%= link_to 'New Post', new_post_path %>
+                <% @all_posts.each do |p| %>
+                <div class="post-preview">
+                    <%= link_to post_path(p) do %>
+                        <h2 class="post-title">
+                            <%= p.ruta %>
+                        </h2>
+ 
+                    <% end %>
+                    <p class="post-meta">Por <a href="#"><%= p.creador %></a></p>
+                </div>
+                <hr>
+                <% end %>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
