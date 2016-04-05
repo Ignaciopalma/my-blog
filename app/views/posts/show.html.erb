@@ -38,9 +38,9 @@
                             <h2>Historia del viaje</h2> <br> <%= @post.historia %>
                         </p>
 
-                        <h3>Galeria de imagenes</h3>
+<!--                         <h3>Galeria de imagenes</h3>
                         <%= image_tag @post.image.url(:medium) %>
-                    <p class="post-meta">Por <a href="#"><%= @post.creador %></a></p>
+                    <p class="post-meta">Por <a href="#"><%= @post.creador %></a></p> -->
                 </div>
 
                 <section class="no-padding" id="portfolio">
@@ -66,6 +66,8 @@
                         </div>
                     </div>
                 </section>
+
+                <%= link_to "Editar", edit_post_path %>
 
 
 
