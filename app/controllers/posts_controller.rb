@@ -16,7 +16,9 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    @post.assets.new
+    @post.roads.build
+    @post.rates.build
+
   end
 
   # GET /posts/1/edit
@@ -68,6 +70,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:ruta, :historia, :image, :creador, :spot, :peligro, :año, assets_attributes: [:post_id, :image_file_name, :created_at, :updated_at, :image_content_type, :image_file_size, :image_updated_at])
+      params.require(:post).permit(:historia, :image, :creador, :spot, :peligro, :año, roads_attributes: [:principio, :final, :post_id], rates_attributes: [:condiciones, :agua, :seguridad, :camping, :post_id])
     end
 end

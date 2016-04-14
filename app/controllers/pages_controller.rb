@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 	def index
 		@post = Post.new
-		@post.assets.build 
+		@post.roads.build
 		@all_posts = Post.all
 
 	end

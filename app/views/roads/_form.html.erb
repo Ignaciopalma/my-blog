@@ -1,0 +1,37 @@
+<%= form_for Road.new do |f| %>
+  <div class="form-group">
+    <%= f.label :principio %>
+    <%= f.text_field :principio, class: "form-control" %>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :final %> (Cuando fue tu experiencia?)
+    <%= f.text_field :final, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.fields_for :posts do |r| %>
+		  <div class="form-group">
+		    <%= r.label :Tu_Nombre %>
+		    <%= r.text_field :creador, class: "form-control" %>
+		  </div>
+
+
+		  <div class="form-group">
+		    <%= r.label :año %> (Cuando fue tu experiencia?)
+		    <%= r.text_field :año, class: "form-control" %>
+		  </div>
+
+		  <div class="form-group">
+		    <%= r.label :historia %> (Cuentanos la historia de tu viaje!)
+		    <%= r.text_area :historia, class: "form-control", size: "50x15" %>
+		  </div>
+    <% end %>
+  </div>
+
+    <div>
+    <%= f.submit class: "btn btn-success" %>
+  </div>
+
+<% end %>

@@ -1,13 +1,36 @@
 <%= form_for @post, :html => { :multipart => true } do |f| %>
+
+  <div class="form-group">
+    <%= f.fields_for :roads do |r| %>
+      <%= r.label :principio %> (desde?)
+      <%= r.text_field :principio, class: "form-control" %>
+
+      <%= r.label :final %> (hasta?)
+      <%= r.text_field :final, class: "form-control" %>
+    <% end %>
+  </div>
+
+    <div class="form-group">
+    <%= f.fields_for :rates do |t| %>
+      <%= t.label :condiciones %> 
+      <%= t.number_field :condiciones, class: "form-control" %>
+
+      <%= t.label :agua %> 
+      <%= t.number_field :agua, class: "form-control" %>
+
+      <%= t.label :seguridad %> 
+      <%= t.number_field :seguridad, class: "form-control" %>
+
+      <%= t.label :camping %> 
+      <%= t.number_field :camping, class: "form-control" %>
+    <% end %>
+  </div>
+
   <div class="form-group">
     <%= f.label :Tu_Nombre %>
     <%= f.text_field :creador, class: "form-control" %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :ruta %> (Ej: Puerto Montt / Caleta Las Arenas)
-    <%= f.text_area :ruta, class: "form-control" %>
-  </div>
 
   <div class="form-group">
     <%= f.label :año %> (Cuando fue tu experiencia?)
@@ -36,12 +59,16 @@
 
   </div>
 
+
+
+
+
 <!--     <h3>Imagenes de galeria</h3>
-      <%= fields_for :assets do |assets_fields| %>
+      <%#= fields_for :assets do |assets_fields| %>
         <p>
-          <%= assets_fields.file_field :image %>
+          <%#= assets_fields.file_field :image %>
         </p>
-      <% end %> -->
+      <%# end %> -->
 
   <div>
     <%= f.submit class: "btn btn-success" %>

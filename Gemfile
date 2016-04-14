@@ -16,15 +16,11 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'puma'
 
 
-
-
-
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'sqlite3'
-
 
 
 group :production do

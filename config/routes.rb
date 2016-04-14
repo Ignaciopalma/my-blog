@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+
+  resources :rates
+  resources :roads
   resources :posts do
     resources :comments
+ 
   end  
   root 'pages#index'
 

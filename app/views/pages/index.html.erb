@@ -16,6 +16,9 @@
                         <h1>A La Vuelta De La Rueda</h1>
                         <hr class="small">
                         <span class="subheading">Cicloturismo en Chile</span>
+                        <br>
+                        <%= link_to "Sube tu Experiencia!", new_post_path, class: "btn btn-success", id: "" %>
+
                     </div>
                 </div>
             </div>
@@ -32,20 +35,14 @@
                     <%= link_to post_path(p) do %>
                         <%= image_tag p.image.url(:thumb) %>
                         <h2 class="post-title">
-                            <%= p.ruta %>
+                            <%= p.roads.first.principio %> / <%= p.roads.first.final %>
                         </h2>
  
                     <% end %>
                     <p class="post-meta">Por <a href="#"><%= p.creador %></a></p>
                 </div>
                 <hr>
-                <% end %>
-
-
-                <h4>Sube tu experiencia!</h4>
-
-                <%= render "posts/form" %>
-
+                <% end %>  
 
             </div>
         </div>

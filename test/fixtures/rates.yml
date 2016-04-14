@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  condiciones: 1
+  agua: 1
+  seguridad: 1
+  camping: 1
+  post_id: 
+
+two:
+  condiciones: 1
+  agua: 1
+  seguridad: 1
+  camping: 1
+  post_id: 

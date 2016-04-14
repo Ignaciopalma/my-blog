@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404043049) do
+ActiveRecord::Schema.define(version: 20160414031251) do
 
   create_table "assets", force: :cascade do |t|
     t.integer  "post_id"
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20160404043049) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "ruta"
     t.string   "participantes"
     t.string   "historia"
     t.datetime "created_at",         null: false
@@ -53,5 +52,27 @@ ActiveRecord::Schema.define(version: 20160404043049) do
     t.string   "peligro"
     t.integer  "año"
   end
+
+  create_table "rates", force: :cascade do |t|
+    t.integer  "condiciones"
+    t.integer  "agua"
+    t.integer  "seguridad"
+    t.integer  "camping"
+    t.integer  "post_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "rates", ["post_id"], name: "index_rates_on_post_id"
+
+  create_table "roads", force: :cascade do |t|
+    t.string   "principio"
+    t.string   "final"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "roads", ["post_id"], name: "index_roads_on_post_id"
 
 end
