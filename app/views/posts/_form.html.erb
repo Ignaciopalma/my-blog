@@ -1,30 +1,36 @@
 <%= form_for @post, :html => { :multipart => true } do |f| %>
 
+<h2>Cual fue tu recorrido?</h2>
+
   <div class="form-group">
     <%= f.fields_for :roads do |r| %>
-      <%= r.label :principio %> (desde?)
+      <%= r.label :principio %> 
       <%= r.text_field :principio, class: "form-control" %>
 
-      <%= r.label :final %> (hasta?)
+      <%= r.label :final %>
       <%= r.text_field :final, class: "form-control" %>
     <% end %>
   </div>
 
+<h2>Califica de 1 a 10 la siguiente informacion: (1 como muy malo y 10 como excelente)</h2>
+
     <div class="form-group">
     <%= f.fields_for :rates do |t| %>
-      <%= t.label :condiciones %> 
+      <%= t.label :condiciones_del_terreno %> 
       <%= t.number_field :condiciones, class: "form-control" %>
 
-      <%= t.label :agua %> 
+      <%= t.label :acceso_a_agua_y_comida %> 
       <%= t.number_field :agua, class: "form-control" %>
 
-      <%= t.label :seguridad %> 
+      <%= t.label :seguridad_para_pedalear %> (poca berma, trafico de camiones, robos, etc)
       <%= t.number_field :seguridad, class: "form-control" %>
 
-      <%= t.label :camping %> 
+      <%= t.label :camping %> (Acceso a lugares para acampar pagados o gratuitos)
       <%= t.number_field :camping, class: "form-control" %>
     <% end %>
   </div>
+
+<h2>Cuentanos tu experiencia!</h2>
 
   <div class="form-group">
     <%= f.label :Tu_Nombre %>
@@ -33,7 +39,7 @@
 
 
   <div class="form-group">
-    <%= f.label :año %> (Cuando fue tu experiencia?)
+    <%= f.label :año %> 
     <%= f.text_field :año, class: "form-control" %>
   </div>
 
