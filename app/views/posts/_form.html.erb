@@ -1,83 +1,102 @@
 <%= form_for @post, :html => { :multipart => true } do |f| %>
 
-<h2>Cual fue tu recorrido?</h2>
 
-  <div class="form-group">
-    <%= f.fields_for :roads do |r| %>
-      <%= r.label :principio %> 
-      <%= r.text_field :principio, class: "form-control" %>
-
-      <%= r.label :final %>
-      <%= r.text_field :final, class: "form-control" %>
-    <% end %>
-  </div>
-
-<h2>Califica de 1 a 10 la siguiente informacion: (1 como muy malo y 10 como excelente)</h2>
-
-    <div class="form-group">
-    <%= f.fields_for :rates do |t| %>
-      <%= t.label :condiciones_del_terreno %> 
-      <%= t.number_field :condiciones, class: "form-control" %>
-
-      <%= t.label :acceso_a_agua_y_comida %> 
-      <%= t.number_field :agua, class: "form-control" %>
-
-      <%= t.label :seguridad_para_pedalear %> (poca berma, trafico de camiones, robos, etc)
-      <%= t.number_field :seguridad, class: "form-control" %>
-
-      <%= t.label :camping %> (Acceso a lugares para acampar pagados o gratuitos)
-      <%= t.number_field :camping, class: "form-control" %>
-    <% end %>
-  </div>
-
-<h2>Cuentanos tu experiencia!</h2>
-
-  <div class="form-group">
-    <%= f.label :Tu_Nombre %>
-    <%= f.text_field :creador, class: "form-control" %>
-  </div>
-
-
-  <div class="form-group">
-    <%= f.label :año %> 
-    <%= f.text_field :año, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :historia %> (Cuentanos la historia de tu viaje!)
-    <%= f.text_area :historia, class: "form-control", size: "50x15" %>
-  </div>
-
-    <div class="form-group">
-    <%= f.label :Datos %> (campings, comidas, lugares de entretencion)
-    <%= f.text_area :spot, class: "form-control", size: "24x6" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :peligros %> (lugares sin camino, sin acceso a agua o alimentos, robos, etc)
-    <%= f.text_area :peligro, class: "form-control", size: "24x6" %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Cual fue tu recorrido?</h3>
     </div>
-
-<h3>Imagen Principal</h3>
-  <div class="form-group">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-
+    <div class="panel-body">
+      <div class="form-inline">
+        <div class="form-group">
+          <%= f.fields_for :roads do |r| %>
+            <%= r.label :principio %> 
+            <%= r.text_field :principio, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            <%= r.label :final %>
+            <%= r.text_field :final, class: "form-control" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Califica de 1 a 10 la siguiente informacion: (1 como muy malo y 10 como excelente)</h3>
+    </div>
+    <div class="panel-body">
+
+        <div class="form-group">
+          <%= f.fields_for :rates do |t| %>
+            <%= t.label :condiciones_del_terreno %> 
+            <%= t.number_field :condiciones, class: "form-control" %>
+
+            <%= t.label :acceso_a_agua_y_comida %> 
+            <%= t.number_field :agua, class: "form-control" %>
+
+            <%= t.label :seguridad_para_pedalear %> (poca berma, trafico de camiones, robos, etc)
+            <%= t.number_field :seguridad, class: "form-control" %>
+
+            <%= t.label :camping %> (Acceso a lugares para acampar pagados o gratuitos)
+            <%= t.number_field :camping, class: "form-control" %>
+          <% end %>
+        </div>
+        
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Cuentanos tu experiencia!</h3>
+    </div>
+    <div class="panel-body">
+
+        <div class="form-group">
+          <%= f.label :Tu_Nombre %>
+          <%= f.text_field :creador, class: "form-control" %>
+        </div>
 
 
+        <div class="form-group">
+          <%= f.label :año %> 
+          <%= f.text_field :año, class: "form-control" %>
+        </div>
 
+        <div class="form-group">
+          <%= f.label :historia %> (Cuentanos la historia de tu viaje!)
+          <%= f.text_area :historia, class: "form-control", size: "50x15" %>
+        </div>
 
-<!--     <h3>Imagenes de galeria</h3>
-      <%#= fields_for :assets do |assets_fields| %>
-        <p>
-          <%#= assets_fields.file_field :image %>
-        </p>
-      <%# end %> -->
+          <div class="form-group">
+          <%= f.label :Datos %> (campings, comidas, lugares de entretencion)
+          <%= f.text_area :spot, class: "form-control", size: "24x6" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :peligros %> (lugares sin camino, sin acceso a agua o alimentos, robos, etc)
+          <%= f.text_area :peligro, class: "form-control", size: "24x6" %>
+        </div>
+    
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Imagen Principal</h3>
+    </div>
+    <div class="panel-body">
+
+        <div class="form-group">
+          <%= f.label :image %>
+          <%= f.file_field :image %>
+        </div>
+
+    </div>
+  </div>
 
   <div>
     <%= f.submit class: "btn btn-success" %>
   </div>
 
-<% end %>
+ <% end %>
