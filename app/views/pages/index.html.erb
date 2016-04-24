@@ -3,11 +3,8 @@
 
 <body>
 
-    <!-- Navigation -->
     <%= render 'layouts/nav' %>
 
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
     <header class="intro-header" style="background-image: url('/assets/pumalin.jpg')">
         <div class="container">
             <div class="row">
@@ -23,7 +20,10 @@
                 </div>
             </div>
         </div>
+
     </header>
+
+
 
     <!-- Main Content -->
     <div class="container">
@@ -31,14 +31,14 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
                 <% @all_posts.each do |p| %>
-                <div class="post-preview">
+                    <div class="post-preview">
                     <%= link_to post_path(p) do %>
                         <%= image_tag p.image.url(:thumb) %>
                         <h2 class="post-title">
                             <%= p.roads.first.principio %> / <%= p.roads.first.final %>
                         </h2>
  
-                    <% end %>
+                <% end %>
                     <p class="post-meta">Por <a href="#"><%= p.creador %></a></p>
                 </div>
                 <hr>

@@ -1,7 +1,7 @@
 <%= form_for @post, :html => { :multipart => true } do |f| %>
 
 
-  <div class="panel panel-default">
+  <div class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">Cual fue tu recorrido?</h3>
     </div>
@@ -21,7 +21,7 @@
     </div>
   </div>
 
-  <div class="panel panel-default">
+  <div class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">Califica de 1 a 10 la siguiente informacion: (1 como muy malo y 10 como excelente)</h3>
     </div>
@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <div class="panel panel-default">
+  <div class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">Cuentanos tu experiencia!</h3>
     </div>
@@ -64,8 +64,8 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :historia %> (Cuentanos la historia de tu viaje!)
-          <%= f.text_area :historia, class: "form-control", size: "50x15" %>
+          <%= f.label :historia %> (Opcional)
+          <%= f.text_area :historia, class: "form-control", size: "5x5" %>
         </div>
 
           <div class="form-group">
@@ -81,7 +81,7 @@
     </div>
   </div>
 
-  <div class="panel panel-default">
+  <div class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">Imagen Principal</h3>
     </div>
@@ -96,7 +96,7 @@
   </div>
 
   <div>
-    <%= f.submit class: "btn btn-success" %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 
 
