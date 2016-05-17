@@ -16,3 +16,24 @@
  *= require_self
  */
 
+ @import 'bourbon';
+ @import 'neat';
+
+ .team {
+ 	section {
+ 		@include outer-container;
+
+ 		div {
+ 			@include span-columns(3);
+ 			@include omega();
+ 			@include outer-container;
+ 				
+			img, h3, p {
+				@include span-columns(6);
+				@include shift(3);
+
+				text-align: center;
+			}
+ 		}
+ 	}
+ }
